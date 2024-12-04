@@ -16,7 +16,7 @@ public class Carteira {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "saldo")
+    @Column(name = "saldo", nullable = false)
     private BigDecimal saldo;
 
     @CreationTimestamp

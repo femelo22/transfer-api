@@ -15,7 +15,7 @@ public class Notificacao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "mensagem")
+    @Column(name = "mensagem", nullable = false)
     private String mensagem;
 
     @Enumerated(EnumType.ORDINAL)

@@ -1,7 +1,5 @@
 package com.br.lfmelo.enums;
-
 import lombok.Getter;
-
 @Getter
 public enum TipoUsuario {
 
