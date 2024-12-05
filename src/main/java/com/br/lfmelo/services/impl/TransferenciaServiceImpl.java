@@ -9,10 +9,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TransferenciaServiceImpl implements TransferenciaService {
-
     @Autowired
     private UsuarioService usuarioService;
-
     @Autowired
     private SqsSender sqsSender;
 

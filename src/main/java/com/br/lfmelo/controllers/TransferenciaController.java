@@ -13,12 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/transfer")
 public class TransferenciaController {
-
     @Autowired
     private TransferenciaService service;
 
     @PostMapping
-    public ResponseEntity<?> realizarTransferencia(@RequestBody @Valid TranferenciaDTO dto) {
+    public ResponseEntity<?> realizarTransferencia(@RequestBody TranferenciaDTO dto) {
         service.validarDadosEnviarMensagem(dto);
         return ResponseEntity.ok().body("Transfer processing started");
     }

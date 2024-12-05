@@ -2,11 +2,11 @@ package com.br.lfmelo.entities;
 
 import com.br.lfmelo.enums.TipoUsuario;
 import jakarta.persistence.*;
-import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
 @Entity(name = "TBL_USUARIOS")
 public class Usuario {
 
@@ -32,10 +32,94 @@ public class Usuario {
     @Enumerated(EnumType.ORDINAL)
     private TipoUsuario tipoUsuario;
 
+    @CreationTimestamp
+    @Column(name = "data_criacao")
+    private LocalDateTime dataCriacao;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_carteira", referencedColumnName = "id", unique = true, nullable = false)
     private Carteira carteira;
 
     @OneToMany(mappedBy = "usuario")
     private List<Notificacao> notificacaos;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getCpfCnpj() {
+        return cpfCnpj;
+    }
+
+    public void setCpfCnpj(String cpfCnpj) {
+        this.cpfCnpj = cpfCnpj;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
+    }
+
+    public LocalDateTime getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(LocalDateTime dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public Carteira getCarteira() {
+        return carteira;
+    }
+
+    public void setCarteira(Carteira carteira) {
+        this.carteira = carteira;
+    }
+
+    public List<Notificacao> getNotificacaos() {
+        return notificacaos;
+    }
+
+    public void setNotificacaos(List<Notificacao> notificacaos) {
+        this.notificacaos = notificacaos;
+    }
 }
