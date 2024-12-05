@@ -2,7 +2,6 @@ package com.br.lfmelo.controllers;
 
 import com.br.lfmelo.entities.dtos.TranferenciaDTO;
 import com.br.lfmelo.services.TransferenciaService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
